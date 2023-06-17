@@ -24,7 +24,7 @@ describe('Check if Input Field is Selected', () => {
     cy.contains('You have registed 1 submission');
   });
 
-  it('Customer enters the raffle multiple times', () => {
+  it('Customer enters the raffle multiple times using the same email and a new email', () => {
     cy.get('#input-3').type('John Doe');
     cy.get('#input-4').type('john.doe@example.com');
     cy.get('#input-8').type('40');
@@ -35,6 +35,14 @@ describe('Check if Input Field is Selected', () => {
     cy.reload();
     cy.get('#input-3').type('John Doe');
     cy.get('#input-4').type('john.doe@example.com');
+    cy.get('#input-8').type('40');
+    cy.get('#input-9').type('I should win');
+    cy.get('.button-sc-1ta45yz-0').click();
+    cy.contains('Submission Confirmed');
+    cy.contains('You have registed 2 submission');
+    cy.reload();
+    cy.get('#input-3').type('John Doe');
+    cy.get('#input-4').type('john@example.com');
     cy.get('#input-8').type('40');
     cy.get('#input-9').type('I should win');
     cy.get('.button-sc-1ta45yz-0').click();
