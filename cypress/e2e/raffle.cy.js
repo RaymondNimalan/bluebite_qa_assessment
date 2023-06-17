@@ -99,4 +99,13 @@ describe('Check if Input Field is Selected', () => {
     cy.get('.button-sc-1ta45yz-0').click();
     cy.get('.button-sc-1ta45yz-0').contains('Submit');
   });
+
+  it('Customer enters the raffle with invalid age', () => {
+    cy.get('#input-3').type('John Doe');
+    cy.get('#input-4').type('john.doe@example.com');
+    cy.get('#input-8').type('16');
+    cy.get('#input-9').type('I should win');
+    cy.get('.button-sc-1ta45yz-0').click();
+    cy.contains('Must be 18 or older to enter.');
+  });
 });
