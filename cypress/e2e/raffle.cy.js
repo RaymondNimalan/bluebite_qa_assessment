@@ -66,4 +66,12 @@ describe('Check if Input Field is Selected', () => {
     cy.get('#input-8').click().should('be.focused');
     cy.get('#input-9').click().should('be.focused');
   });
+
+  it('Customer enters the raffle without a name', () => {
+    cy.get('#input-4').type('john.doe@example.com');
+    cy.get('#input-8').type('40');
+    cy.get('#input-9').type('I should win');
+    cy.get('.button-sc-1ta45yz-0').click();
+    cy.get('.button-sc-1ta45yz-0').contains('Submit');
+  });
 });
