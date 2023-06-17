@@ -115,3 +115,138 @@ Expected Result:
 - Input field turns red when a required field is submitted empty
 
 ---
+
+## Test Cases
+
+Precondition:
+Navigate to the raffle page
+
+### Test Case 1
+
+The customer enters the raffle with a reason
+
+- Enter a name
+- Enter a valid email
+- Enters a valid age
+- Enters a reason
+- Click on submit
+
+Expected Result:
+
+- Raffle is submitted successfully and shows confirmation page
+
+### Test Case 2
+
+The customer enters the raffle without a reason
+
+- Enter a name
+- Enter a valid email
+- Enter a valid age
+- Click on submit
+
+Expected Result:
+
+- Raffle is submitted successfully and shows confirmation page
+
+### Test Case 3
+
+The customer enters the raffle multiple times with the same email
+
+- Enter valid data
+- Click submit
+- Refresh page
+- Enter valid data using the previous email
+- Click submit
+
+Expected Result:
+
+- Raffle is submitted successfully and shows the confirmation page with 1 submission
+- After refreshing, a second submission with the same email shows the confirmation page with 2 submission
+
+### Test Case 4
+
+The customer enters the raffle multiple times with a different email
+
+- Enter valid data
+- Refresh page
+- Click submit
+- Enter valid data using a different email
+- Click submit
+
+Expected Result:
+
+- Raffle is submitted successfully and shows the confirmation page with 1 submission
+- After refreshing, a second submission with a different email shows the confirmation page with 2 submission
+
+### Test Case 5
+
+The customer clicks on each of the input fields
+
+- Click on name field
+- Click on email field
+- Click on age field
+- Click on reason field
+
+Expected Result:
+
+- The border of each field will turn blue when focused
+
+### Test Case 6
+
+The customer enters the raffle without a name
+
+- Leave name field empty
+- Fill all other fields with valid data
+- Click submit
+
+Expected Result:
+
+- Border changes red for name field
+
+###Test Case 7
+The customer enters the raffle without an email
+
+- Leave email field empty
+- Fill all other fields with valid data
+- Click submit
+
+Expected Result:
+
+- Border changes red for email field
+
+### Test Case 8
+
+The customer enters the raffle without an age
+
+- Leave age field empty
+- Fill all other fields with valid data
+- Click submit
+
+Expected Result:
+
+- Border changes red for age field
+
+### Test Case 9
+
+The customer enters the raffle with an invalid email
+
+- Enter an invalid email into the email field
+- Fill all other fields with valid data
+- Click submit
+
+Expected Result:
+
+- Border changes red for email field
+
+### Test Case 10
+
+The customer enters the raffle with an age under 18
+
+- Enter age under 18 into the age field
+- Fill all other fields with valid data
+- Click submit
+
+Expected Result:
+
+- Form is not successfully submitted
+- Page notifies customer that age doesn’t meet the requirements.
