@@ -24,7 +24,7 @@ Steps to Reproduce:
 
 Actual Result:
 
-- The form is submitted and the submission \* confirmation page opens.
+- The form is submitted and the submission confirmation page opens.
 
 Expected Result:
 
@@ -135,6 +135,8 @@ Expected Result:
 
 - Raffle is submitted successfully and shows confirmation page
 
+Test Result: PASSED
+
 ### Test Case 2
 
 The customer enters the raffle without a reason
@@ -147,6 +149,8 @@ The customer enters the raffle without a reason
 Expected Result:
 
 - Raffle is submitted successfully and shows confirmation page
+
+Test Result: PASSED
 
 ### Test Case 3
 
@@ -163,6 +167,8 @@ Expected Result:
 - Raffle is submitted successfully and shows the confirmation page with 1 submission
 - After refreshing, a second submission with the same email shows the confirmation page with 2 submission
 
+Test Result: PASSED
+
 ### Test Case 4
 
 The customer enters the raffle multiple times with a different email
@@ -178,6 +184,8 @@ Expected Result:
 - Raffle is submitted successfully and shows the confirmation page with 1 submission
 - After refreshing, a second submission with a different email shows the confirmation page with 2 submission
 
+Test Result: PASSED
+
 ### Test Case 5
 
 The customer clicks on each of the input fields
@@ -191,7 +199,23 @@ Expected Result:
 
 - The border of each field will turn blue when focused
 
+Test Result: PASSED
+
 ### Test Case 6
+
+The customer enters the raffle without entering any data
+
+- Leave all fields empty
+- Click submit
+
+Expected Result:
+
+- Border changes red for required fields
+- Form is not submitted
+
+Test Result: FAILED
+
+### Test Case 7
 
 The customer enters the raffle without a name
 
@@ -201,9 +225,12 @@ The customer enters the raffle without a name
 
 Expected Result:
 
-- Border changes red for name field
+- Form is not submitted
 
-###Test Case 7
+Test Result: PASSED
+
+### Test Case 8
+
 The customer enters the raffle without an email
 
 - Leave email field empty
@@ -212,9 +239,11 @@ The customer enters the raffle without an email
 
 Expected Result:
 
-- Border changes red for email field
+- Form is not submitted
 
-### Test Case 8
+Test Result: FAILED
+
+### Test Case 9
 
 The customer enters the raffle without an age
 
@@ -224,9 +253,11 @@ The customer enters the raffle without an age
 
 Expected Result:
 
-- Border changes red for age field
+- Form is not submitted
 
-### Test Case 9
+Test Result: PASSED
+
+### Test Case 10
 
 The customer enters the raffle with an invalid email
 
@@ -236,17 +267,35 @@ The customer enters the raffle with an invalid email
 
 Expected Result:
 
-- Border changes red for email field
+- Form is not submitted
 
-### Test Case 10
+Test Result: FAILED
+
+### Test Case 11
 
 The customer enters the raffle with an age under 18
 
-- Enter age under 18 into the age field
+- Enter age starting at 17 into the age field
 - Fill all other fields with valid data
 - Click submit
+- Refresh page
+- Repeat steps 1-4 and decrementing the age until 0 is tested
 
 Expected Result:
 
 - Form is not successfully submitted
 - Page notifies customer that age doesn’t meet the requirements.
+
+Test Result: FAILED
+
+## How to run tests
+
+### Cypress Test Runner
+
+- npx cypress open
+- run tests in browser
+
+### CLI
+
+- navigate to root
+- npx cypress run --spec "cypress/e2e/raffle.cy.js"
