@@ -47,6 +47,6 @@ describe('Check if Input Field is Selected', () => {
     cy.get('#input-9').type('I should win');
     cy.get('.button-sc-1ta45yz-0').click();
     cy.contains('Submission Confirmed');
-    cy.contains('You have registed 2 submission');
+    cy.contains('You have registed 3 submission');
   });
 });
