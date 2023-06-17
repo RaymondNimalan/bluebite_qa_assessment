@@ -127,8 +127,8 @@ The customer enters the raffle with a reason
 
 - Enter a name
 - Enter a valid email
-- Enters a valid age
-- Enters a reason
+- Enter a valid age
+- Enter a reason
 - Click on submit
 
 Expected Result:
@@ -292,10 +292,10 @@ Test Result: FAILED
 
 ### Cypress Test Runner
 
-- npx cypress open
+- `npx cypress open`
 - run tests in browser using raffle.cy.js spec
 
 ### CLI
 
 - navigate to root
-- npx cypress run --spec "cypress/e2e/raffle.cy.js"
+- `npx cypress run --spec "cypress/e2e/raffle.cy.js"`
