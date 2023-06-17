@@ -293,7 +293,7 @@ Test Result: FAILED
 ### Cypress Test Runner
 
 - npx cypress open
-- run tests in browser
+- run tests in browser using raffle.cy.js spec
 
 ### CLI
 
