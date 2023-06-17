@@ -59,4 +59,11 @@ describe('Check if Input Field is Selected', () => {
     cy.contains('Submission Confirmed');
     cy.contains('You have registed 2 submission');
   });
+
+  it('Customer clicks on an input field and turns blue', () => {
+    cy.get('#input-3').click().should('be.focused');
+    cy.get('#input-4').click().should('be.focused');
+    cy.get('#input-8').click().should('be.focused');
+    cy.get('#input-9').click().should('be.focused');
+  });
 });
